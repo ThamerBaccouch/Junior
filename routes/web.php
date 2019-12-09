@@ -11,5 +11,11 @@
 |
 */
 
-Route::any('/',"AdminController@returnHome");
+Route::any('/Admin',"AdminController@returnHome");
 
+Route::any('/',"MainController@HomePage");
+
+Route::any('/Course',"MainController@CoursePage");
+Route::any('/Events',"MainController@EventsPage");
+Route::any('/Gallery',"MainController@GalleryPage");
+Route::any('/Contact',"MainController@ContactPage");
