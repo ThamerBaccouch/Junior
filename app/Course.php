@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Course extends Model
 {
-    public $table="users";
-
+    public $table="courses";
 
     public function tests(){
-       return  $this->belongsToMany("App/Test");
+        return $this->hasMany("App/Test");
     }
 }
