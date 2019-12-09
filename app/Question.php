@@ -9,6 +9,6 @@ class Question extends Model
     public $table="questions";
 
     public function test(){
-        return $this->belongsTo("App/Test");
+        return $this->belongsTo("App\Test");
     }
 }
