@@ -2,14 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
-{
-    public $table="users";
+class User extends Authenticatable
+{    public $table="users";
 
 
     public function tests(){
        return  $this->belongsToMany("App\Test");
     }
+
+
+
 }

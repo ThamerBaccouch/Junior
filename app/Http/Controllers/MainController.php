@@ -4,7 +4,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-
+use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
 {
@@ -34,4 +38,30 @@ class MainController extends Controller
         $active=array("gallery"=>"active");
         return view("Main.gallery",$active);
     }
+
+
+
+    public function test(Request $request)
+    {
+        /*
+        $userData = User::where([
+            ['email','=',$request->input('email')],
+                     ])->first();
+            var_dump($userData);
+            echo Hash::make($request->input("password"));
+        */
+
+        $user = Array("email" => "thamer@gmail.com", "password" => "thamer");
+        if (Auth::attempt($user))
+        {
+            echo "connected";
+            echo Auth::check();
+            Auth::logout();
+            echo Auth::check();
+        }
+        else
+            echo "false";
+
+        }
+
 }

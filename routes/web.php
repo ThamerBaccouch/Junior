@@ -19,3 +19,6 @@ Route::any('/Course',"MainController@CoursePage");
 Route::any('/Events',"MainController@EventsPage");
 Route::any('/Gallery',"MainController@GalleryPage");
 Route::any('/Contact',"MainController@ContactPage");
+
+
+Route::any('/test',"MainController@test");
