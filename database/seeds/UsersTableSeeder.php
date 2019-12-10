@@ -18,5 +18,14 @@ class UsersTableSeeder extends Seeder
         $user->password=Hash::make("thamer");
         $user->email="thamer@gmail.com";
         $user->save();
+
+
+        $user=new User;
+        $user->username="admin";
+        $user->age=25;
+        $user->password=Hash::make("admin");
+        $user->email="admin@gmail.com";
+        $user->is_admin=true;
+        $user->save();
     }
 }

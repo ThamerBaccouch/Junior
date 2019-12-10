@@ -81,17 +81,31 @@ z
                         <li class="{{isset($course)?"active":""}}" ><a href="/Course">Course</a></li>
                         <li class="{{isset($events)?"active":""}}" ><a href="/Events">Events</a></li>
 
-                        <li class="{{isset($gallery)?"active":""}}" ><a href="/Gallery">Gallery</a></li>
-
-                        <!-- <li class="dropdown">
-                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Page<span class="caret"></span></a>
-                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="404.html">404 Page</a></li>
-                                 <li><a href="#">Link Two</a></li>
-                                 <li><a href="#">Link Three</a></li>
-                             </ul>
-                         </li>-->
+                            <li class="{{isset($gallery)?"active":""}}" ><a href="/Gallery">Gallery</a></li>
                          <li class="{{isset($contact)?"active":""}}" ><a href="/Contact">Contact</a></li>
+                            @if(Auth::check())
+                                <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{Auth::user()->username}}<span class="caret"></span></a>
+                             <ul class="dropdown-menu" role="menu">
+                                 @if(Auth::user()->is_admin)
+                                        <li><a href="/Admin">Dashboard</a></li>
+                                 @endif
+                                 <li><a href="/Profile">Profile</a></li>
+                                 <li><a href="/Logout">Logout</a></li>
+                             </ul>
+                            </li>
+                            @else
+                            <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
+                             <ul class="dropdown-menu" role="menu">
+
+                                 <li><a href="/Login">Login</a></li>
+                                 <li><a href="/Register">Register</a></li>
+                             </ul>
+                            </li>
+
+                            @endif
+
                      </ul>
                  </div><!--/.nav-collapse -->
             </div>
@@ -104,4 +118,33 @@ z
 
 
 </body>
+
+<!-- Javascript Files
+    ================================================== -->
+
+    <!-- initialize jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Preloader js file -->
+    <script src="js/queryloader2.min.js" type="text/javascript"></script>
+    <!-- For smooth animatin  -->
+    <script src="js/wow.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="js/slick.min.js"></script>
+    <!-- superslides slider -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.animate-enhanced.min.js"></script>
+    <script src="js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- for circle counter -->
+    <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
+    <!-- Gallery slider -->
+    <script type="text/javascript" language="javascript" src="js/jquery.tosrus.min.all.js"></script>
+
+    <!-- Custom js-->
+    <script src="js/custom.js"></script>
+    <!--===============================================
+    Template Design By WpFreeware Team.
+    Author URI : http://www.wpfreeware.com/
+    ====================================================-->
 </html>

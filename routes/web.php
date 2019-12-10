@@ -11,7 +11,7 @@
 |
 */
 
-Route::any('/Admin',"AdminController@returnHome");
+Route::any('/Admin',"AdminController@returnHome")->middleware("CheckAdmin");
 
 Route::any('/',"MainController@HomePage");
 
@@ -22,3 +22,11 @@ Route::any('/Contact',"MainController@ContactPage");
 
 
 Route::any('/test',"MainController@test");
+Route::get('/Login',"AuthController@LoginPage");
+Route::post('/Login',"AuthController@Authenticate");
+Route::any('/Logout',"AuthController@Logout");
+
+
+Route::get('/Register',"AuthController@RegisterPage");
+Route::any('/Profile',"AuthController@ProfilePage");
+
