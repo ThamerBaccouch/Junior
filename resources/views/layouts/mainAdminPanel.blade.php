@@ -245,20 +245,20 @@
           <p class="centered"><a href="/Profile"><img src="{{asset('img/ui-sam.jpg')}}" class="img-circle" width="80"></a></p>
           <h5 class="centered">{{Auth::user()->username}}</h5>
           <li class="mt">
-            <a class="{{(isset($dashboard))?'active':''}}" href="/Admin">
+            <a class="{{(isset($dashboard_side))?'active':''}}" href="/Admin">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
           </li>
 
           <li class="sub-menu">
-            <a class="{{(isset($tests))?'active':''}}" href="/Tests">
+            <a class="{{(isset($tests_side))?'active':''}}" href="/Tests">
               <i class="fa fa-cogs"></i>
               <span>Tests</span>
               </a>
           </li>
           <li class="sub-menu">
-            <a class="{{(isset($courses))?'active':''}}" href="/Courses">
+            <a class="{{(isset($courses_side))?'active':''}}" href="/Courses">
               <i class="fa fa-tasks"></i>
               <span>Courses</span>
               </a>

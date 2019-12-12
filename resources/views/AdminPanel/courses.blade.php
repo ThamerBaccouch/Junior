@@ -19,7 +19,7 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Test name</th>
+                <th scope="col">Course Title</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -30,6 +30,10 @@
                 <td>{{$course->name}}</td>
                 <td style="width:18%">
                     <div style="display: flex;justify-content: space-between;align-items: center;">
+                        <form action="{{$course->path}}" method="get">
+                            @csrf
+                            <input type="submit" class="btn btn-secondary" value="View">
+                        </form>
                         <form action="/EditCourse/{{$course->id}}" method="get">
                             @csrf
                             <input type="submit" class="btn btn-success" value="Edit">

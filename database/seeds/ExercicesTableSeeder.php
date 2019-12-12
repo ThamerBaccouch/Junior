@@ -14,12 +14,12 @@ class ExercicesTableSeeder extends Seeder
     {
         $course=new Course;
         $course->name="SQL Injection Course 1";
-        $course->text="test test test test ";
+        $course->path="test test test test ";
         $course->save();
 
         $course2=new Course;
         $course2->name="RSA - common modulus";
-        $course2->text="test2 test2 test2 test2";
+        $course2->path="test2 test2 test2 test2";
         $course2->save();
 
         $test=new Test;

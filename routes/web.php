@@ -12,8 +12,8 @@
 */
 
 Route::any('/Admin',"AdminController@dashboard")->middleware("CheckAdmin");
-Route::get('/Tests',"AdminController@tests")->middleware("CheckAdmin");
 
+Route::get('/Tests',"AdminController@tests")->middleware("CheckAdmin");
 Route::any('/EditTest/{id}',"AdminController@editTest")->middleware("CheckAdmin");
 Route::any('/DeleteTest/{id}',"AdminController@DeleteTest")->middleware("CheckAdmin");
 Route::any('/AddTest',"AdminController@AddTest")->middleware("CheckAdmin");
@@ -24,8 +24,9 @@ Route::any('/EditQuestion/{id_test}/{id_question}',"AdminController@EditQuestion
 
 Route::any('/Courses',"AdminController@courses")->middleware("CheckAdmin");
 Route::any('/DeleteCourse/{id}',"AdminController@DeleteCourse")->middleware("CheckAdmin");
-
-
+Route::any('/AddCourse',"AdminController@AddCourse")->middleware("CheckAdmin");
+Route::any('/EditCourse/{id}',"AdminController@EditCourse")->middleware("CheckAdmin");
+Route::any('/DeleteTestFromCourse/{id}',"AdminController@DeleteTestFromCourse")->middleware("CheckAdmin");
 
 
 
