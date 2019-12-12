@@ -3484,3 +3484,9 @@ ul.chat-available-user li a:hover {
 #copyrights a {
   color: #fff;
 }
+
+
+.Add-button{
+    padding:10px;
+    font-size: 50px !important;
+}

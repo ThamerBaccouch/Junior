@@ -219,10 +219,7 @@ img{
     float: left;
     display: inline;
     width: 100%;
-    overflow: hidden;
-    height:90vh;
     margin-top: -20px;
-    margin-bottom: -5px
 }
 .slider_area {
   background-color: #ccc;

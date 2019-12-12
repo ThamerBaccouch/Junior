@@ -1,0 +1,21 @@
+@keyframes anim {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+tr {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  display: none;
+  transform-origin: top;
+}
+tr.active {
+  display: table-row;
+  animation: anim 0.5s ease;
+}
+td {
+  padding: 10px;
+}
